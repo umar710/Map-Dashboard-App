@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# Map Dashboard App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React frontend with a Node.js backend that integrates a map using Leaflet, implements JWT-based authentication, and provides a user-friendly interface.
 
-## Available Scripts
+## Features
+- **Login Page**: Authenticate users with a username and password.
+- **Dashboard**: Display cards that navigate to a map view.
+- **Map View**: Show a map of India with zoom functionality.
+- **Protected Routes**: Ensure only authenticated users can access the dashboard and map view.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Setup Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
+- Node.js (v16 or higher)
+- npm (v8 or higher)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### Backend Setup
+1. Navigate to the `backend` folder:
+   ```bash
+   cd backend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file and add the following:
+   ```env
+   PORT=5000
+   SECRET_KEY=your-secret-key
+   ```
+   Replace `your-secret-key` with a secure secret key for JWT token generation.
+4. Start the backend server:
+   ```bash
+   node index.js
+   ```
+   The backend will run on `http://localhost:5000`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### Frontend Setup
+1. Navigate to the `frontend` folder:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the frontend development server:
+   ```bash
+   npm start
+   ```
+   The frontend will run on `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Packages Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend
+- **express**: Web framework for Node.js.
+- **jsonwebtoken**: For JWT-based authentication.
+- **cors**: To enable cross-origin requests.
+- **dotenv**: To load environment variables from a `.env` file.
+- **body-parser**: To parse incoming request bodies.
 
-### `npm run eject`
+### Frontend
+- **react**: JavaScript library for building user interfaces.
+- **react-router-dom**: For routing in the React app.
+- **axios**: For making HTTP requests.
+- **leaflet** and **react-leaflet**: For map integration.
+- **bootstrap**: For styling components.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+map-dashboard-app/
+├── backend/
+│   ├── index.js
+│   ├── .env
+│   ├── .gitignore
+│   ├── package.json
+│   └── package-lock.json
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Login.js
+│   │   │   ├── Dashboard.js
+│   │   │   ├── MapView.js
+│   │   │   └── ProtectedRoute.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   ├── App.css
+│   │   └── index.css
+│   ├── package.json
+│   └── package-lock.json
+└── README.md
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Deployment
+### Backend
+- The application is deployed on **Render** and can be accessed [here](https://backend-auth-1xam.onrender.com/api/login)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Frontend
+- The application is deployed on **Netlify** and can be accessed [here](https://map-dashboard-app.vercel.app/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## How to Run the Application
+1. Start the backend server:
+   ```bash
+   cd backend
+   node index.js
+   ```
+2. Start the frontend development server:
+   ```bash
+   cd frontend
+   npm start
+   ```
+3. Open your browser and navigate to `http://localhost:3000`.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Testing Credentials
+- **Username**: `user`
+- **Password**: `password`
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
